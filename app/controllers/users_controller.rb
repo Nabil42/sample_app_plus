@@ -28,16 +28,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @titre = "Édition profil"
+    @titre = "Edition profil"
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profil actualisé."
+      flash[:success] = "Profil actualise."
       redirect_to @user
     else
-      @titre = "Édition profil"
+      @titre = "Edition profil"
       render 'edit'
     end
   end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Utilisateur supprimé."
+    flash[:success] = "Utilisateur supprime."
     redirect_to users_path
   end
 
