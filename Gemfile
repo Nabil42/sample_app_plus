@@ -10,6 +10,9 @@ gem 'rails', '3.2.11'
 #end
 
 gem 'sqlite3', :group => [:development, :test]
+
+gem 'gravatar_image_tag', '1.0.0.pre2'
+
 group :production do
   gem 'thin'
   gem 'pg'
@@ -24,6 +27,7 @@ group :test do
   gem 'rspec', '2.5.0'
   gem 'spork', '0.9.0.rc5'
   gem 'webrat', '0.7.1'
+  gem 'factory_girl_rails', '1.0'
 end
 
 
