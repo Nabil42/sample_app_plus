@@ -12,6 +12,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3', :group => [:development, :test]
 
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem "will_paginate", :git => "https://github.com/p7r/will_paginate.git", :branch => "rails3"
 
 group :production do
   gem 'thin'
@@ -21,6 +22,7 @@ end
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate', '2.4.0'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
