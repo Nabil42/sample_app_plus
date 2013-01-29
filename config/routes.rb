@@ -1,8 +1,13 @@
 SampleApp::Application.routes.draw do
 
-  resources :users
+  resources :users do
+    resources :microposts, :only => [:index]
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+
+
+  match '/users/:id/microposts' => 'microposts#index', :as => :microposts_by_user
 
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'

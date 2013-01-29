@@ -59,7 +59,7 @@ describe MicropostsController do
 
       it "devrait avoir un message flash" do
         post :create, :micropost => @attr
-        flash[:success].should =~ /created/i
+        flash[:success].should =~ /ajoute/i
       end
     end
   end
