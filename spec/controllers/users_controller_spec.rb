@@ -183,7 +183,7 @@ describe UsersController do
 
     it "devrait avoir le bon titre" do
       get :edit, :id => @user
-      response.should have_selector("title", :content => "Édition profil")
+      response.should have_selector("title", :content => "Edition profil")
     end
 
     it "devrait avoir un lien pour changer l'image Gravatar" do
@@ -215,7 +215,7 @@ describe UsersController do
 
       it "devrait avoir le bon titre" do
         put :update, :id => @user, :user => @attr
-        response.should have_selector("title", :content => "Édition profil")
+        response.should have_selector("title", :content => "Edition profil")
       end
     end
 
@@ -240,7 +240,7 @@ describe UsersController do
 
       it "devrait afficher un message flash" do
         put :update, :id => @user, :user => @attr
-        flash[:success].should =~ /actualisé/
+        flash[:success].should =~ /actualise/
       end
     end
   end

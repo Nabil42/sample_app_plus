@@ -48,11 +48,6 @@ class UsersController < ApplicationController
     @users = User.paginate(:page => params[:page])
   end
 
-  def show
-    @user = User.find(params[:id])
-    @titre = @user.nom
-  end
-
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "Utilisateur supprime."
