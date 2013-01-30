@@ -26,7 +26,7 @@ namespace :db do
     end
   end
 
-  desc "Remplissage de la base de données avec des messages fictifs"
+  desc "Remplissage de la base de donnees avec des messages fictifs"
   task :populate => :environment do
 
         User.all(:limit => 6).each do |user|
