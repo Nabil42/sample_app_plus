@@ -1,0 +1,14 @@
+<table>
+  <thead>
+  <tr>
+    <th>Microposts</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if !@microposts.nil? %>
+      <% @microposts.each do |m| %>
+          <tr><td><%= m.content %></td></tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

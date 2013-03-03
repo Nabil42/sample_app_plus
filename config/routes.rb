@@ -5,9 +5,11 @@ SampleApp::Application.routes.draw do
   end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :microposts_ajax, :only => [:ajax]
 
 
   match '/users/:id/microposts' => 'microposts#index', :as => :microposts_by_user
+
 
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'

@@ -16,8 +16,49 @@
 
     <p>
       C'est la page d'accueil de l'application exemple du
-      <a href="http://railstutorial.org/">Tutoriel Ruby on Rails</a>.
-    </p>
+      <a href="http://railstutorial.org/">Tutoriel Ruby on Rails</a>
+      <style>
+        span {
+            font-weight: bold;
+            color: blue;
+            font-style: oblique;
+            font-size: 20px;
 
-    <%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
+        }
+      </style>
+      <script type="text/javascript">
+          $(function (){
+              $('span:first-child').tooltip({placement:'left'});
+              $('span:last-child').tooltip();
+              alert('Bienvenue à l\'application Sample App relookée avec bootstrap ' + $('#utilisateurs').val());
+          });
+      </script>
+      <span rel="tooltip" data-original-title="relookée par Nabil le 1er Mars 2013" >relookée avec Bootstrap !</span>
+
+
+    <div class="row-fluid">
+      <div class="span_btn_inscription"><%= link_to "S'inscrire !", signup_path, :class => "btn btn-success btn-large" %></div>
+    </div>
+
+    <!--  Liste des utilisateurs -->
+
+    <select id="utilisateurs" class="input-maxi">
+      <%@users.each do |u| %>
+          <option value= <%= u.id %>><%= u.nom %></option>
+      <% end %>
+    </select>
+
+    <%= link_to "Récupérer les microposts de cet utilisateur",
+        :remote => true,
+        :url => "/pages/home",
+        :update => "tab_microposts",
+        :sel_user_id => '1'
+    %>
+
+
+    <!-- Tableaux des microposts de l'utilisateur selectionné -->
+    <div id="tab_microposts" >
+      <%= render "pages/microposts_list" %>
+    </div>
+
 <% end %>

@@ -21,6 +21,7 @@ class MicropostsController < ApplicationController
 
 
   def index
+
     user = User.find(params[:user_id]) rescue user
     if !user.nil?
       @microposts = user.microposts.paginate(:page => params[:page])
@@ -29,7 +30,6 @@ class MicropostsController < ApplicationController
       redirect_to root_path
     end
   end
-
 
   private
 

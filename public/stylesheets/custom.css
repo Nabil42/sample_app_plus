@@ -3,7 +3,7 @@
 }
 
 body {
-    background: #cff;
+    background: #8990ff;
 }
 
 header {
@@ -29,7 +29,12 @@ section h1 {
 /* Liens */
 
 a {
-    color: #09c;
+    color: #0e18cc;
+    text-decoration: none;
+}
+
+a.custom {
+    color: #0e18cc;
     text-decoration: none;
 }
 
